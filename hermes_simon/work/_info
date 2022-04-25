@@ -1,0 +1,604 @@
+m255
+K4
+z2
+!s11e vcom 2021.1 2021.02, Feb  3 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/NicolasMoura/Desktop/T1SICHIP
+Ebram_rc
+Z1 w1636891902
+Z2 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z3 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 0
+R0
+Z6 8NOEKEON/bram_rc.vhd
+Z7 FNOEKEON/bram_rc.vhd
+l0
+L20 1
+VQGRe92TN[jI6F;k2gaeLz1
+!s100 LX[bUm0nBhCVj3NX0@zf<2
+Z8 OV;C;2021.1;73
+31
+Z9 !s110 1650853831
+!i10b 1
+Z10 !s108 1650853831.000000
+Z11 !s90 -reportprogress|300|-work|work|-93|-explicit|NOEKEON/bram_rc.vhd|
+Z12 !s107 NOEKEON/bram_rc.vhd|
+!i113 1
+Z13 o-work work -93 -explicit
+Z14 tExplicit 1 CvgOpt 0
+Abram_rc
+R2
+R3
+R4
+R5
+Z15 DEx4 work 7 bram_rc 0 22 QGRe92TN[jI6F;k2gaeLz1
+!i122 0
+l42
+L33 22
+V<3YPf`3nhKbWY<FJYoMz_2
+!s100 bUZ;8h4RWGKcHb]<J<L`[0
+R8
+31
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Ehermes_buffer
+Z16 w1491569714
+Z17 DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
+Z18 DPx4 work 13 hermespackage 0 22 egW3A508ddI=Pgb:aA:>:3
+R2
+R3
+R4
+R5
+!i122 3
+R0
+Z19 8NOC/Hermes_buffer.vhd
+Z20 FNOC/Hermes_buffer.vhd
+l0
+L37 1
+VUU=9mz^gLA=4bghJf=QR=1
+!s100 ^FAZijBZH<>WQfLR5^mO:0
+R8
+31
+R9
+!i10b 1
+R10
+Z21 !s90 -reportprogress|300|-work|work|-93|-explicit|NOC/Hermes_buffer.vhd|
+Z22 !s107 NOC/Hermes_buffer.vhd|
+!i113 1
+R13
+R14
+Ahermes_buffer
+R17
+R18
+R2
+R3
+R4
+R5
+Z23 DEx4 work 13 hermes_buffer 0 22 UU=9mz^gLA=4bghJf=QR=1
+!i122 3
+l64
+L53 142
+VCbIUn70INkk_oTHg]=0da1
+!s100 7g54HVKieKkAa:j_S;JZE2
+R8
+31
+R9
+!i10b 1
+R10
+R21
+R22
+!i113 1
+R13
+R14
+Ehermes_crossbar
+R16
+R17
+R18
+R2
+R3
+R4
+R5
+!i122 5
+R0
+Z24 8NOC/Hermes_crossbar.vhd
+Z25 FNOC/Hermes_crossbar.vhd
+l0
+L19 1
+VUoMdLb2`;1`@024LDAGSM3
+!s100 @kY^;DzC:iiWO`SY<`QBR1
+R8
+31
+R9
+!i10b 1
+R10
+Z26 !s90 -reportprogress|300|-work|work|-93|-explicit|NOC/Hermes_crossbar.vhd|
+Z27 !s107 NOC/Hermes_crossbar.vhd|
+!i113 1
+R13
+R14
+Ahermes_crossbar
+R17
+R18
+R2
+R3
+R4
+R5
+Z28 DEx4 work 15 hermes_crossbar 0 22 UoMdLb2`;1`@024LDAGSM3
+!i122 5
+l35
+L33 103
+V8Mk8mR=@::=M@jcJH7VK@0
+!s100 =Rd6LZi7KHFTUWF8?RcZT2
+R8
+31
+R9
+!i10b 1
+R10
+R26
+R27
+!i113 1
+R13
+R14
+Phermespackage
+R17
+R2
+R3
+R4
+R5
+!i122 2
+Z29 w1622487532
+R0
+Z30 8NOC/Hermes_package.vhd
+Z31 FNOC/Hermes_package.vhd
+l0
+L10 1
+VegW3A508ddI=Pgb:aA:>:3
+!s100 1^;S9ahCn?RB`BY8`8n;B1
+R8
+31
+b1
+R9
+!i10b 1
+R10
+Z32 !s90 -reportprogress|300|-work|work|-93|-explicit|NOC/Hermes_package.vhd|
+Z33 !s107 NOC/Hermes_package.vhd|
+!i113 1
+R13
+R14
+Bbody
+R18
+R17
+R2
+R3
+R4
+R5
+!i122 2
+l0
+L72 1
+V`V_g1gRcO0:HkYL5i`_cR0
+!s100 ORKNe^H94I@Eh5O7L_AUC3
+R8
+31
+R9
+!i10b 1
+R10
+R32
+R33
+!i113 1
+R13
+R14
+Enoc
+Z34 w1622306337
+Z35 DPx4 work 9 standards 0 22 4nKP6Nib^g5Om7?f0C^EF1
+R17
+R18
+R2
+R3
+R4
+R5
+!i122 9
+R0
+Z36 8NOC/NOC.vhd
+Z37 FNOC/NOC.vhd
+l0
+L115 1
+V3e1EV>Rb[jP>WN=jd=Jd02
+!s100 k4ZIL<HK:L00h5i0_`?VW1
+R8
+31
+Z38 !s110 1650853832
+!i10b 1
+Z39 !s108 1650853832.000000
+Z40 !s90 -reportprogress|300|-work|work|-93|-explicit|NOC/NOC.vhd|
+Z41 !s107 NOC/NOC.vhd|
+!i113 1
+R13
+R14
+Anoc
+Z42 DEx4 work 10 routercc_s 0 22 @PSNz6H<W5[]:F>>dEfm_2
+R35
+R17
+R18
+R2
+R3
+R4
+R5
+Z43 DEx4 work 3 noc 0 22 3e1EV>Rb[jP>WN=jd=Jd02
+!i122 9
+l149
+L133 124
+VVGhW:iaIA?9T9DGU2WNE53
+!s100 2>83F6UK0UN`[5^;_QH?[1
+R8
+31
+R38
+!i10b 1
+R39
+R40
+R41
+!i113 1
+R13
+R14
+Enoekeon_top
+Z44 w1650837390
+R2
+R3
+R4
+R5
+!i122 1
+R0
+Z45 8NOEKEON/noekeon_top.vhd
+Z46 FNOEKEON/noekeon_top.vhd
+l0
+L24 1
+V@L>]P]8oDMKHnMz39Fh1m3
+!s100 9=]Re9D3BKIzNPNOh4PFo3
+R8
+31
+R9
+!i10b 1
+R10
+Z47 !s90 -reportprogress|300|-work|work|-93|-explicit|NOEKEON/noekeon_top.vhd|
+Z48 !s107 NOEKEON/noekeon_top.vhd|
+!i113 1
+R13
+R14
+Anoekeon_top
+R15
+R2
+R3
+R4
+R5
+Z49 DEx4 work 11 noekeon_top 0 22 @L>]P]8oDMKHnMz39Fh1m3
+!i122 1
+l72
+L50 420
+V99:7jjJG18kTUFlGj88Ta0
+!s100 ;WYED2A`a9HT?lNA7CN[G2
+R8
+31
+R9
+!i10b 1
+R10
+R47
+R48
+!i113 1
+R13
+R14
+Eroutercc
+Z50 w1621635220
+R17
+R18
+R2
+R3
+R4
+R5
+!i122 7
+R0
+Z51 8NOC/RouterCC.vhd
+Z52 FNOC/RouterCC.vhd
+l0
+L46 1
+V=^I@gS0dgcm<TcPXO>zW@1
+!s100 I8Wj_@eDAOHe7e<O6a5AK2
+R8
+31
+R9
+!i10b 1
+R10
+Z53 !s90 -reportprogress|300|-work|work|-93|-explicit|NOC/RouterCC.vhd|
+Z54 !s107 NOC/RouterCC.vhd|
+!i113 1
+R13
+R14
+Aroutercc
+R28
+Z55 DEx4 work 13 switchcontrol 0 22 A0@FA^P[6?JdXnUBPoH3G1
+R23
+R17
+R18
+R2
+R3
+R4
+R5
+Z56 DEx4 work 8 routercc 0 22 =^I@gS0dgcm<TcPXO>zW@1
+!i122 7
+l68
+L61 115
+V@UOj8gml4@W?dRKzX2MN03
+!s100 6nLW=hg9n[EDZ7WDGXmi<3
+R8
+31
+R9
+!i10b 1
+R10
+R53
+R54
+!i113 1
+R13
+R14
+Eroutercc_s
+Z57 w1622503270
+R17
+R18
+R2
+R3
+R4
+R5
+!i122 8
+R0
+Z58 8NOC/RouterCC_S.vhd
+Z59 FNOC/RouterCC_S.vhd
+l0
+L9 1
+V@PSNz6H<W5[]:F>>dEfm_2
+!s100 `7=MThD1dW@ASVX?n4Tf71
+R8
+31
+R9
+!i10b 1
+R10
+Z60 !s90 -reportprogress|300|-work|work|-93|-explicit|NOC/RouterCC_S.vhd|
+Z61 !s107 NOC/RouterCC_S.vhd|
+!i113 1
+R13
+R14
+Aroutercc_s
+Z62 DEx4 work 13 simon_wrapper 0 22 WI1>;D@dZ<f<@DPB^J_A@2
+R56
+R17
+R18
+R2
+R3
+R4
+R5
+R42
+!i122 8
+l29
+L24 69
+VcUD>h28eRbYRcYD18_Hb?3
+!s100 W:BZdVi64gQ;Enk:<^kBC1
+R8
+31
+R9
+!i10b 1
+R10
+R60
+R61
+!i113 1
+R13
+R14
+Esimon_wrapper
+Z63 w1650853827
+R18
+R17
+R2
+R3
+R4
+R5
+!i122 6
+R0
+Z64 8NOC/simon_wrapper.vhd
+Z65 FNOC/simon_wrapper.vhd
+l0
+L9 1
+VWI1>;D@dZ<f<@DPB^J_A@2
+!s100 3f?l0@=:keDM7RP_<FT753
+R8
+31
+R9
+!i10b 1
+R10
+Z66 !s90 -reportprogress|300|-work|work|-93|-explicit|NOC/simon_wrapper.vhd|
+Z67 !s107 NOC/simon_wrapper.vhd|
+!i113 1
+R13
+R14
+Aa1
+R49
+R18
+R17
+R2
+R3
+R4
+R5
+R62
+!i122 6
+l67
+L26 286
+Vk_A`?<@1ak^E?JndVP=6e2
+!s100 ;@eha4?VZ?O`mO`IBOEPB2
+R8
+31
+R9
+!i10b 1
+R10
+R66
+R67
+!i113 1
+R13
+R14
+Pstandards
+R17
+R18
+R2
+R3
+R4
+R5
+!i122 9
+R34
+R0
+R36
+R37
+l0
+Z68 L12 1
+V4nKP6Nib^g5Om7?f0C^EF1
+!s100 KIKMOEdoOI5ggc[zL?K`z1
+R8
+31
+b1
+R38
+!i10b 1
+R39
+R40
+R41
+!i113 1
+R13
+R14
+Bbody
+R35
+R17
+R18
+R2
+R3
+R4
+R5
+!i122 9
+l0
+L34 1
+VRY[jL:;T7^QC@[=i4QIOl0
+!s100 K>bMFU3lm6]jV66o2ielz1
+R8
+31
+R38
+!i10b 1
+R39
+R40
+R41
+!i113 1
+R13
+R14
+Eswitchcontrol
+Z69 w1491592896
+R17
+R18
+R2
+R3
+R4
+R5
+!i122 4
+R0
+Z70 8NOC/Hermes_switchcontrol.vhd
+Z71 FNOC/Hermes_switchcontrol.vhd
+l0
+L6 1
+VA0@FA^P[6?JdXnUBPoH3G1
+!s100 dGNeJdL=hBmFg[gPONVfl0
+R8
+31
+R9
+!i10b 1
+R10
+Z72 !s90 -reportprogress|300|-work|work|-93|-explicit|NOC/Hermes_switchcontrol.vhd|
+Z73 !s107 NOC/Hermes_switchcontrol.vhd|
+!i113 1
+R13
+R14
+Aalgorithmxy
+R17
+R18
+R2
+R3
+R4
+R5
+R55
+!i122 4
+l38
+L20 185
+Ve3Yn2WI>8mbV]9;JCa>TP2
+!s100 K4<a?Nf;SY7PN:z8KB>353
+R8
+31
+R9
+!i10b 1
+R10
+R72
+R73
+!i113 1
+R13
+R14
+Etb
+Z74 w1650838622
+R35
+R17
+R18
+R2
+R3
+R4
+R5
+!i122 10
+R0
+Z75 8tb.vhd
+Z76 Ftb.vhd
+l0
+R68
+V]J_E[`lXV^;zz^DhM96n13
+!s100 keBYCBlMOL?:?VGg>o?oH0
+R8
+31
+R38
+!i10b 1
+R39
+Z77 !s90 -reportprogress|300|-work|work|-93|-explicit|tb.vhd|
+!s107 tb.vhd|
+!i113 1
+R13
+R14
+Aa1
+R43
+R35
+R17
+R18
+R2
+R3
+R4
+R5
+DEx4 work 2 tb 0 22 ]J_E[`lXV^;zz^DhM96n13
+!i122 10
+l82
+L17 204
+Vfa1J1eR1@ciDYEZz:b_jI2
+!s100 `Nf7=8X7d=k<X=IcYFA6l3
+R8
+31
+R38
+!i10b 1
+R39
+R77
+Z78 !s107 tb.vhd|
+!i113 1
+R13
+R14

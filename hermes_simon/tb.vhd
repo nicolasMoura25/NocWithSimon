@@ -55,9 +55,9 @@ architecture a1 of tb is
     constant FB : integer := 128/TAM_FLIT;   --  FB: flits_per_block:  8 flits per block for TAM_FLIT=16; and 4 flits per block for TAM_FLIT=32
 
     constant tp : tpacket := (--start size    src tgt  encrypt     --------- size is a function of FB
-                              ( 0,     2*FB,    0,  8, '1'), 
-                              ( 0,       FB,    2,  6, '1'),  
-                              ( 20,    4*FB,    0,  7, '1'),  
+                              ( 10,     2*FB,    0,  8, '1'), 
+                              ( 10,       FB,    2,  6, '1'),  
+                              ( 310,    4*FB,    0,  7, '1'),  
                               ( 12,    5*FB,    8,  0, '1'),  
                               ----- ( 40,    3*FB,    2,  3, '1),   -- BUG - ESTE PACOTE NÃO PASSA DEVIDO A FORMA COMO FOI FEITA A GERAÇÃO DOS PACOTES
                               ( 400,   20*FB,    2,  3, '1')
