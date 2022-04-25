@@ -35,7 +35,7 @@ architecture a1 of simon_wrapper is
     signal buf, buf_out, buf_copy, buf_simon: bf := (others=>(others=>'0'));
     signal cont: std_logic_vector(BUF_BITS downto 0);
 
-    type st is (S_iddle, S0, S1, S1b, S2, Initializer);
+    type st is (S_iddle, S0, S1, S2, Initializer);
     signal EA: st;
 
     type st_out is (S_iddle, S0, S1, S_H, S_S);
@@ -55,7 +55,7 @@ architecture a1 of simon_wrapper is
 	-- new sinals
 	signal key_cont: integer range 0 to 128/TAM_FLIT;
 	signal data_word_in, data_word_out, key_word_in	:	std_logic_vector(31 downto 0):=(others=>'0');
-	signal key_valid, key_sent, data_valid, reset_to_key : std_logic;
+	signal key_valid, key_sent, data_valid, reset_to_key, buff_populated : std_logic;
 	signal key_length    : std_logic_vector(1 downto 0);
 	
 	type st_simon is (reset_key, send_lenth, send_key, key_ok );
@@ -103,7 +103,7 @@ begin
 								h_size <= IN_data_in;
 								cont <= (others=>'0');
 
-				when S1 => 		if must_by_pass_simon='0'then
+				when S1 =>	if must_by_pass_simon='0'then
 									if (cont < 4) then 
 										data_valid <= '1';
 										data_word_in <= IN_data_in;                            
@@ -111,31 +111,25 @@ begin
 										go <= '0';
 										size <= size - 1;
 									else
-										encrypt <= '1';   -- habilita a encriptação
+										encrypt <= not decrypt;   -- habilita a encriptação
 										EA <= S2;
 										data_valid <= '0';
 									end if;
 								else
 									EA <= S2;
-								end if;
+								end if; 
 
-				when S1b =>		if size=0 then     -- terminou o pacote ou continua a receber
-									EA <= S_iddle;
-								else
-									EA <= S1;
-								end if;  
-
-				when S2 =>		if cipher_ready='1' or must_by_pass_simon='1' then   -- assim que sobe o encrypt o cipher_ready desce duranta a encriptação
-									-- verifica se o buffer de saída esta livre
-									if output_buffer_in_use='0' then
+				when S2 =>		if buff_populated = '1' then 
 										cont <= (others=>'0');
 										go <= '1';         -- can transfer to the other buffer
-									else 
-										EA <= S1b;
-									end if;
-								elsif  cipher_ready='1' and O_EA = S1 then
-									EA <= S1b;							
+										if size=0 and O_EA = S_iddle then     -- terminou o pacote ou continua a receber
+											go <= '0';
+											EA <= S_iddle;
+										else
+											EA <= S1;
+										end if;
 								end if;
+								
 
 				end case;
 		end if;
@@ -178,14 +172,19 @@ begin
 	if reset='1' then
 		cypher_Buff <= (others=>(others=>'0'));  
 		cypher_position <= 0;
+		buff_populated <= '0';
 		elsif rising_edge(clock) then
 			if cipher_ready='1' then
 				cypher_Buff(cypher_position) <= data_word_out;				
 				if cypher_position < 3 then 
 					cypher_position <= cypher_position +1;
+					buff_populated <= '0';
 				else
 					cypher_position <= 0;
+					buff_populated <= '1';
 				end if;
+			else 
+				buff_populated <= '0';
 			end if;
 		end if;
 	end process;

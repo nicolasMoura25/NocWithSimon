@@ -114,40 +114,29 @@ add wave -noupdate -group DECRYPT8 /tb/noc1/noc(8)/router/wrapper_out/cipher_rig
 add wave -noupdate -group DECRYPT8 /tb/noc1/noc(8)/router/wrapper_out/plain_left
 add wave -noupdate -group DECRYPT8 /tb/noc1/noc(8)/router/wrapper_out/plain_right
 
-add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/key_cont
-add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/key_sent
-add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/key_length
-add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/key_valid
+add wave -noupdate -group KEY /tb/noc1/noc(0)/router/wrapper_in/key_cont
+add wave -noupdate -group KEY /tb/noc1/noc(0)/router/wrapper_in/key_sent
+add wave -noupdate -group KEY /tb/noc1/noc(0)/router/wrapper_in/encription/key_length
+add wave -noupdate -group KEY /tb/noc1/noc(0)/router/wrapper_in/encription/key_valid
+add wave -noupdate -group KEY -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_in/encription/key_word_in
+
 add wave -noupdate -group SIMON -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_in/data_word_in
+add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/data_valid
 add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/EA
 add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/O_EA
-add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/go
-add wave -noupdate -group SIMON -color Cyan -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_in/OUT_data_in
-add wave -noupdate -group SIMON -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_in/cypher_Buff
-
-
-add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/encryption
-add wave -noupdate -group SIMON -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_in/encription/key_word_in
-
-
-add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/data_valid
-add wave -noupdate -group SIMON -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_in/encription/data_word_out
 add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/data_ready
+add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/go
+add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/buff_populated
+add wave -noupdate -group SIMON -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_in/cypher_Buff
+add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/encryption
+add wave -noupdate -group SIMON -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_in/encription/data_word_out
+add wave -noupdate -group SIMON -color Cyan -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_in/OUT_data_in
 add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/st
 add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/st_cnt
 add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/st_rounds
 add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/micro_state
 add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/end_encrypt
 add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/max_keys
-add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/sub_key_valid
-add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/sub_key_addr
-add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/sub_key_addr_in
-add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/sub_key_addr_out
-add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/sub_key_word_in
-add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/sub_key_data_o
-add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/sub_key_first
-add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/sub_key_second
-
  
 
 TreeUpdate [SetDefaultTree]
