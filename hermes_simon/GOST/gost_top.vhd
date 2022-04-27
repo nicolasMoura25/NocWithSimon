@@ -182,7 +182,7 @@ begin
         when 5 =>
           st_cnt <= st_cnt + 1;
           if st_cnt = 1 then
-            st <= 0;
+            st <= 1;
           end if;
 
         when others => null;

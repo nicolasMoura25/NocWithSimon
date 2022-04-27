@@ -137,6 +137,11 @@ add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/st_
 add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/micro_state
 add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/end_encrypt
 add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/max_keys
+add wave -noupdate -group SIMON -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_in/encription/st_cnt
+add wave -noupdate -group SIMON -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_in/encription/key_word
+add wave -noupdate -group SIMON -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_in/encription/key_word_buffer
+add wave -noupdate -group SIMON -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_in/encription/data_word
+add wave -noupdate -group SIMON -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_in/encription/temporary_block
  
 
 TreeUpdate [SetDefaultTree]

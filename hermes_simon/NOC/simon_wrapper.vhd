@@ -50,7 +50,7 @@ architecture a1 of simon_wrapper is
    
 	signal cipher_left, cipher_right, plain_left, plain_right : std_logic_vector(63 downto 0);
 
-	constant key: std_logic_vector(127 downto 0) := x"CECDBEFDEAEDFFCDCCACCABBDCBCFEDA";  -- key
+	constant key: std_logic_vector(127 downto 0) := x"BDCBCFEDACCACCABEAEDFFCDCECDBEFD";  -- key CECDBEFDEAEDFFCDCCACCABBDCBCFEDA
 	
 	-- new sinals
 	signal key_cont: integer range 0 to 128/TAM_FLIT;

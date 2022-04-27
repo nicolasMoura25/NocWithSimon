@@ -56,8 +56,8 @@ architecture noekeon_top of noekeon_top is
 
   --Temporary signals
   type PDATA is array (0 to 3) of std_logic_vector(31 downto 0);
-  signal data_word       : PDATA;
-  signal key_word        : PDATA;
+  signal data_word       			: PDATA;
+  signal key_word, key_word_buffer	: PDATA;
 
   --RAM signals
   signal rc_addr         : std_logic_vector(4 downto 0);
@@ -96,7 +96,7 @@ begin
   begin
     if reset_n = '0' then
       st        <= 0;
-      st_cnt    <= (others => '0');
+      st_cnt    <= "11";
       nr_rounds <= 0;
       rc_addr_passed <= (others => '0');
     elsif rising_edge(clk) then
@@ -104,8 +104,8 @@ begin
         -- Load key data input
         when 0 =>
           if key_valid = '1' then
-            st_cnt <= st_cnt + 1;
-            if st_cnt = 3 then --default 128bit key
+            st_cnt <= st_cnt - 1;
+            if st_cnt = 0 then --default 128bit key
               st   <= st + 1;
             end if;
           end if;
@@ -113,8 +113,8 @@ begin
         -- Load ciphertext input
         when 1 =>
           if data_valid = '1' then
-            st_cnt <= st_cnt + 1;
-            if st_cnt = 3 then
+            st_cnt <= st_cnt - 1;
+            if st_cnt = 0 then
               st   <= st + 1;
             end if;
           end if;
@@ -143,7 +143,7 @@ begin
                 end if;
 
               when 15 =>
-                if st_rounds = 25 then
+                if st_rounds = 26 then
                   st <= st + 1;
                   st_rounds <= 0;
                   nr_rounds <= 0;
@@ -189,8 +189,8 @@ begin
 
         -- 3: Data Ready
         when 3 =>
-          st_cnt <= st_cnt + 1;
-          if st_cnt = 3 then
+          st_cnt <= st_cnt - 1;
+          if st_cnt = 0 then
             st     <= 1;
           end if;
 
@@ -205,18 +205,19 @@ begin
     if reset_n = '0' then
       temporary_block <= (others => '0');
       rc_addr   <= (others => '0');
-      key_word  <= (others => (others => '0'));
+      key_word_buffer  <= (others => (others => '0'));
       data_word <= (others => (others => '0'));
     elsif rising_edge(clk) then
       if st = 0 then
         -- IO data flow
         if key_valid = '1' then
-          key_word(conv_integer(st_cnt)) <= key_word_in;
+          key_word_buffer(conv_integer(st_cnt)) <= key_word_in;
         end if;
       elsif st = 1 then
         -- IO data flow
         if data_valid = '1' then
           data_word(conv_integer(st_cnt)) <= data_word_in;
+			key_word <= key_word_buffer;
         end if;
       elsif st = 2 then
         if encryption = '1' then
