@@ -8,9 +8,9 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/NicolasMoura/Desktop/T1SICHIP
+Z0 dC:/Users/NicolasMoura/Desktop/new/NocWithSimon/hermes_simon
 Ebram_rc
-Z1 w1636891902
+Z1 w1651460424
 Z2 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
 Z3 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
 Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
@@ -25,9 +25,9 @@ VQGRe92TN[jI6F;k2gaeLz1
 !s100 LX[bUm0nBhCVj3NX0@zf<2
 Z8 OV;C;2021.1;73
 31
-Z9 !s110 1651026195
+Z9 !s110 1651462283
 !i10b 1
-Z10 !s108 1651026194.000000
+Z10 !s108 1651462283.000000
 Z11 !s90 -reportprogress|300|-work|work|-93|-explicit|NOEKEON/bram_rc.vhd|
 Z12 !s107 NOEKEON/bram_rc.vhd|
 !i113 1
@@ -55,17 +55,17 @@ R12
 R13
 R14
 Ehermes_buffer
-Z16 w1491569714
-Z17 DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
-Z18 DPx4 work 13 hermespackage 0 22 egW3A508ddI=Pgb:aA:>:3
+R1
+Z16 DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
+Z17 DPx4 work 13 hermespackage 0 22 egW3A508ddI=Pgb:aA:>:3
 R2
 R3
 R4
 R5
 !i122 3
 R0
-Z19 8NOC/Hermes_buffer.vhd
-Z20 FNOC/Hermes_buffer.vhd
+Z18 8NOC/Hermes_buffer.vhd
+Z19 FNOC/Hermes_buffer.vhd
 l0
 L37 1
 VUU=9mz^gLA=4bghJf=QR=1
@@ -74,20 +74,20 @@ R8
 31
 R9
 !i10b 1
-Z21 !s108 1651026195.000000
-Z22 !s90 -reportprogress|300|-work|work|-93|-explicit|NOC/Hermes_buffer.vhd|
-Z23 !s107 NOC/Hermes_buffer.vhd|
+R10
+Z20 !s90 -reportprogress|300|-work|work|-93|-explicit|NOC/Hermes_buffer.vhd|
+Z21 !s107 NOC/Hermes_buffer.vhd|
 !i113 1
 R13
 R14
 Ahermes_buffer
+R16
 R17
-R18
 R2
 R3
 R4
 R5
-Z24 DEx4 work 13 hermes_buffer 0 22 UU=9mz^gLA=4bghJf=QR=1
+Z22 DEx4 work 13 hermes_buffer 0 22 UU=9mz^gLA=4bghJf=QR=1
 !i122 3
 l64
 L53 142
@@ -97,24 +97,24 @@ R8
 31
 R9
 !i10b 1
+R10
+R20
 R21
-R22
-R23
 !i113 1
 R13
 R14
 Ehermes_crossbar
+R1
 R16
 R17
-R18
 R2
 R3
 R4
 R5
 !i122 5
 R0
-Z25 8NOC/Hermes_crossbar.vhd
-Z26 FNOC/Hermes_crossbar.vhd
+Z23 8NOC/Hermes_crossbar.vhd
+Z24 FNOC/Hermes_crossbar.vhd
 l0
 L19 1
 VUoMdLb2`;1`@024LDAGSM3
@@ -123,20 +123,20 @@ R8
 31
 R9
 !i10b 1
-R21
-Z27 !s90 -reportprogress|300|-work|work|-93|-explicit|NOC/Hermes_crossbar.vhd|
-Z28 !s107 NOC/Hermes_crossbar.vhd|
+R10
+Z25 !s90 -reportprogress|300|-work|work|-93|-explicit|NOC/Hermes_crossbar.vhd|
+Z26 !s107 NOC/Hermes_crossbar.vhd|
 !i113 1
 R13
 R14
 Ahermes_crossbar
+R16
 R17
-R18
 R2
 R3
 R4
 R5
-Z29 DEx4 work 15 hermes_crossbar 0 22 UoMdLb2`;1`@024LDAGSM3
+Z27 DEx4 work 15 hermes_crossbar 0 22 UoMdLb2`;1`@024LDAGSM3
 !i122 5
 l35
 L33 103
@@ -146,23 +146,23 @@ R8
 31
 R9
 !i10b 1
-R21
-R27
-R28
+R10
+R25
+R26
 !i113 1
 R13
 R14
 Phermespackage
-R17
+R16
 R2
 R3
 R4
 R5
 !i122 2
-Z30 w1622487532
+R1
 R0
-Z31 8NOC/Hermes_package.vhd
-Z32 FNOC/Hermes_package.vhd
+Z28 8NOC/Hermes_package.vhd
+Z29 FNOC/Hermes_package.vhd
 l0
 L10 1
 VegW3A508ddI=Pgb:aA:>:3
@@ -172,15 +172,15 @@ R8
 b1
 R9
 !i10b 1
-R21
-Z33 !s90 -reportprogress|300|-work|work|-93|-explicit|NOC/Hermes_package.vhd|
-Z34 !s107 NOC/Hermes_package.vhd|
+R10
+Z30 !s90 -reportprogress|300|-work|work|-93|-explicit|NOC/Hermes_package.vhd|
+Z31 !s107 NOC/Hermes_package.vhd|
 !i113 1
 R13
 R14
 Bbody
-R18
 R17
+R16
 R2
 R3
 R4
@@ -194,49 +194,49 @@ R8
 31
 R9
 !i10b 1
-R21
-R33
-R34
+R10
+R30
+R31
 !i113 1
 R13
 R14
 Enoc
-Z35 w1622306337
-Z36 DPx4 work 9 standards 0 22 4nKP6Nib^g5Om7?f0C^EF1
+R1
+Z32 DPx4 work 9 standards 0 22 4nKP6Nib^g5Om7?f0C^EF1
+R16
 R17
-R18
 R2
 R3
 R4
 R5
 !i122 9
 R0
-Z37 8NOC/NOC.vhd
-Z38 FNOC/NOC.vhd
+Z33 8NOC/NOC.vhd
+Z34 FNOC/NOC.vhd
 l0
 L115 1
 V3e1EV>Rb[jP>WN=jd=Jd02
 !s100 k4ZIL<HK:L00h5i0_`?VW1
 R8
 31
-Z39 !s110 1651026196
+Z35 !s110 1651462284
 !i10b 1
-R21
-Z40 !s90 -reportprogress|300|-work|work|-93|-explicit|NOC/NOC.vhd|
-Z41 !s107 NOC/NOC.vhd|
+Z36 !s108 1651462284.000000
+Z37 !s90 -reportprogress|300|-work|work|-93|-explicit|NOC/NOC.vhd|
+Z38 !s107 NOC/NOC.vhd|
 !i113 1
 R13
 R14
 Anoc
-Z42 DEx4 work 10 routercc_s 0 22 @PSNz6H<W5[]:F>>dEfm_2
-R36
+Z39 DEx4 work 10 routercc_s 0 22 @PSNz6H<W5[]:F>>dEfm_2
+R32
+R16
 R17
-R18
 R2
 R3
 R4
 R5
-Z43 DEx4 work 3 noc 0 22 3e1EV>Rb[jP>WN=jd=Jd02
+Z40 DEx4 work 3 noc 0 22 3e1EV>Rb[jP>WN=jd=Jd02
 !i122 9
 l149
 L133 124
@@ -244,24 +244,24 @@ VVGhW:iaIA?9T9DGU2WNE53
 !s100 2>83F6UK0UN`[5^;_QH?[1
 R8
 31
-R39
+R35
 !i10b 1
-R21
-R40
-R41
+R36
+R37
+R38
 !i113 1
 R13
 R14
 Enoekeon_top
-Z44 w1651026190
+Z41 w1651460513
 R2
 R3
 R4
 R5
 !i122 1
 R0
-Z45 8NOEKEON/noekeon_top.vhd
-Z46 FNOEKEON/noekeon_top.vhd
+Z42 8NOEKEON/noekeon_top.vhd
+Z43 FNOEKEON/noekeon_top.vhd
 l0
 L24 1
 V@L>]P]8oDMKHnMz39Fh1m3
@@ -270,9 +270,9 @@ R8
 31
 R9
 !i10b 1
-R21
-Z47 !s90 -reportprogress|300|-work|work|-93|-explicit|NOEKEON/noekeon_top.vhd|
-Z48 !s107 NOEKEON/noekeon_top.vhd|
+R10
+Z44 !s90 -reportprogress|300|-work|work|-93|-explicit|NOEKEON/noekeon_top.vhd|
+Z45 !s107 NOEKEON/noekeon_top.vhd|
 !i113 1
 R13
 R14
@@ -282,59 +282,59 @@ R2
 R3
 R4
 R5
-Z49 DEx4 work 11 noekeon_top 0 22 @L>]P]8oDMKHnMz39Fh1m3
+Z46 DEx4 work 11 noekeon_top 0 22 @L>]P]8oDMKHnMz39Fh1m3
 !i122 1
 l72
-L50 421
-Vk[310;_PWjSn>TN];W=H`2
-!s100 TdD]0SPA4TnS[>0K7bbZ00
+L50 422
+V1_R[JlfAd<fK[Y3Sidg@O3
+!s100 NeR4A^_B<MgoNaFbhacCm0
 R8
 31
 R9
 !i10b 1
-R21
-R47
-R48
+R10
+R44
+R45
 !i113 1
 R13
 R14
 Eroutercc
-Z50 w1621635220
+R1
+R16
 R17
-R18
 R2
 R3
 R4
 R5
 !i122 7
 R0
-Z51 8NOC/RouterCC.vhd
-Z52 FNOC/RouterCC.vhd
+Z47 8NOC/RouterCC.vhd
+Z48 FNOC/RouterCC.vhd
 l0
 L46 1
 V=^I@gS0dgcm<TcPXO>zW@1
 !s100 I8Wj_@eDAOHe7e<O6a5AK2
 R8
 31
-R9
+R35
 !i10b 1
-R21
-Z53 !s90 -reportprogress|300|-work|work|-93|-explicit|NOC/RouterCC.vhd|
-Z54 !s107 NOC/RouterCC.vhd|
+R10
+Z49 !s90 -reportprogress|300|-work|work|-93|-explicit|NOC/RouterCC.vhd|
+Z50 !s107 NOC/RouterCC.vhd|
 !i113 1
 R13
 R14
 Aroutercc
-R29
-Z55 DEx4 work 13 switchcontrol 0 22 A0@FA^P[6?JdXnUBPoH3G1
-R24
+R27
+Z51 DEx4 work 13 switchcontrol 0 22 A0@FA^P[6?JdXnUBPoH3G1
+R22
+R16
 R17
-R18
 R2
 R3
 R4
 R5
-Z56 DEx4 work 8 routercc 0 22 =^I@gS0dgcm<TcPXO>zW@1
+Z52 DEx4 work 8 routercc 0 22 =^I@gS0dgcm<TcPXO>zW@1
 !i122 7
 l68
 L61 115
@@ -342,50 +342,50 @@ V@UOj8gml4@W?dRKzX2MN03
 !s100 6nLW=hg9n[EDZ7WDGXmi<3
 R8
 31
-R9
+R35
 !i10b 1
-R21
-R53
-R54
+R10
+R49
+R50
 !i113 1
 R13
 R14
 Eroutercc_s
-Z57 w1622503270
+R1
+R16
 R17
-R18
 R2
 R3
 R4
 R5
 !i122 8
 R0
-Z58 8NOC/RouterCC_S.vhd
-Z59 FNOC/RouterCC_S.vhd
+Z53 8NOC/RouterCC_S.vhd
+Z54 FNOC/RouterCC_S.vhd
 l0
 L9 1
 V@PSNz6H<W5[]:F>>dEfm_2
 !s100 `7=MThD1dW@ASVX?n4Tf71
 R8
 31
-R9
+R35
 !i10b 1
-R21
-Z60 !s90 -reportprogress|300|-work|work|-93|-explicit|NOC/RouterCC_S.vhd|
-Z61 !s107 NOC/RouterCC_S.vhd|
+R36
+Z55 !s90 -reportprogress|300|-work|work|-93|-explicit|NOC/RouterCC_S.vhd|
+Z56 !s107 NOC/RouterCC_S.vhd|
 !i113 1
 R13
 R14
 Aroutercc_s
-Z62 DEx4 work 13 simon_wrapper 0 22 WI1>;D@dZ<f<@DPB^J_A@2
-R56
+Z57 DEx4 work 13 simon_wrapper 0 22 WI1>;D@dZ<f<@DPB^J_A@2
+R52
+R16
 R17
-R18
 R2
 R3
 R4
 R5
-R42
+R39
 !i122 8
 l29
 L24 69
@@ -393,26 +393,26 @@ VcUD>h28eRbYRcYD18_Hb?3
 !s100 W:BZdVi64gQ;Enk:<^kBC1
 R8
 31
-R9
+R35
 !i10b 1
-R21
-R60
-R61
+R36
+R55
+R56
 !i113 1
 R13
 R14
 Esimon_wrapper
-Z63 w1651025163
-R18
+Z58 w1651461414
 R17
+R16
 R2
 R3
 R4
 R5
 !i122 6
 R0
-Z64 8NOC/simon_wrapper.vhd
-Z65 FNOC/simon_wrapper.vhd
+Z59 8NOC/simon_wrapper.vhd
+Z60 FNOC/simon_wrapper.vhd
 l0
 L9 1
 VWI1>;D@dZ<f<@DPB^J_A@2
@@ -421,67 +421,67 @@ R8
 31
 R9
 !i10b 1
-R21
-Z66 !s90 -reportprogress|300|-work|work|-93|-explicit|NOC/simon_wrapper.vhd|
-Z67 !s107 NOC/simon_wrapper.vhd|
+R10
+Z61 !s90 -reportprogress|300|-work|work|-93|-explicit|NOC/simon_wrapper.vhd|
+Z62 !s107 NOC/simon_wrapper.vhd|
 !i113 1
 R13
 R14
 Aa1
-R49
-R18
+R46
 R17
+R16
 R2
 R3
 R4
 R5
-R62
+R57
 !i122 6
 l67
-L26 285
-VH0TblHim60EzCf[3D6R692
-!s100 KUab83KWG:M?@<U9[KB>93
+L26 294
+V?`4LodL6iP<HMgBMe1j>B1
+!s100 ^Co[K8dZ5LgGO?8Zh7[[R0
 R8
 31
 R9
 !i10b 1
-R21
-R66
-R67
+R10
+R61
+R62
 !i113 1
 R13
 R14
 Pstandards
+R16
 R17
-R18
 R2
 R3
 R4
 R5
 !i122 9
-R35
+R1
 R0
-R37
-R38
+R33
+R34
 l0
-Z68 L12 1
+Z63 L12 1
 V4nKP6Nib^g5Om7?f0C^EF1
 !s100 KIKMOEdoOI5ggc[zL?K`z1
 R8
 31
 b1
-R39
+R35
 !i10b 1
-R21
-R40
-R41
+R36
+R37
+R38
 !i113 1
 R13
 R14
 Bbody
-R36
+R32
+R16
 R17
-R18
 R2
 R3
 R4
@@ -493,26 +493,26 @@ VRY[jL:;T7^QC@[=i4QIOl0
 !s100 K>bMFU3lm6]jV66o2ielz1
 R8
 31
-R39
+R35
 !i10b 1
-R21
-R40
-R41
+R36
+R37
+R38
 !i113 1
 R13
 R14
 Eswitchcontrol
-Z69 w1491592896
+R1
+R16
 R17
-R18
 R2
 R3
 R4
 R5
 !i122 4
 R0
-Z70 8NOC/Hermes_switchcontrol.vhd
-Z71 FNOC/Hermes_switchcontrol.vhd
+Z64 8NOC/Hermes_switchcontrol.vhd
+Z65 FNOC/Hermes_switchcontrol.vhd
 l0
 L6 1
 VA0@FA^P[6?JdXnUBPoH3G1
@@ -521,20 +521,20 @@ R8
 31
 R9
 !i10b 1
-R21
-Z72 !s90 -reportprogress|300|-work|work|-93|-explicit|NOC/Hermes_switchcontrol.vhd|
-Z73 !s107 NOC/Hermes_switchcontrol.vhd|
+R10
+Z66 !s90 -reportprogress|300|-work|work|-93|-explicit|NOC/Hermes_switchcontrol.vhd|
+Z67 !s107 NOC/Hermes_switchcontrol.vhd|
 !i113 1
 R13
 R14
 Aalgorithmxy
+R16
 R17
-R18
 R2
 R3
 R4
 R5
-R55
+R51
 !i122 4
 l38
 L20 185
@@ -544,44 +544,44 @@ R8
 31
 R9
 !i10b 1
-R21
-R72
-R73
+R10
+R66
+R67
 !i113 1
 R13
 R14
 Etb
-Z74 w1650838622
-R36
+Z68 w1651462277
+R32
+R16
 R17
-R18
 R2
 R3
 R4
 R5
 !i122 10
 R0
-Z75 8tb.vhd
-Z76 Ftb.vhd
+Z69 8tb.vhd
+Z70 Ftb.vhd
 l0
-R68
+R63
 V]J_E[`lXV^;zz^DhM96n13
 !s100 keBYCBlMOL?:?VGg>o?oH0
 R8
 31
-R39
+R35
 !i10b 1
-Z77 !s108 1651026196.000000
-Z78 !s90 -reportprogress|300|-work|work|-93|-explicit|tb.vhd|
+R36
+Z71 !s90 -reportprogress|300|-work|work|-93|-explicit|tb.vhd|
 !s107 tb.vhd|
 !i113 1
 R13
 R14
 Aa1
-R43
-R36
+R40
+R32
+R16
 R17
-R18
 R2
 R3
 R4
@@ -590,15 +590,15 @@ DEx4 work 2 tb 0 22 ]J_E[`lXV^;zz^DhM96n13
 !i122 10
 l82
 L17 204
-Vfa1J1eR1@ciDYEZz:b_jI2
-!s100 `Nf7=8X7d=k<X=IcYFA6l3
+VnFOYnWHP0JZL`T8FnE<C^0
+!s100 5MZ^Gho>cjYX@nJc4J6DW2
 R8
 31
-R39
+R35
 !i10b 1
-R77
-R78
-Z79 !s107 tb.vhd|
+R36
+R71
+Z72 !s107 tb.vhd|
 !i113 1
 R13
 R14

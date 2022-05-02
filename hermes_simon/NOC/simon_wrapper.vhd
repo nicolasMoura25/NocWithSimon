@@ -46,7 +46,7 @@ architecture a1 of simon_wrapper is
     signal size, h_target, h_size, cont_flit_out: regflit ;
 	signal go, output_buffer_in_use: std_logic;
 
-	signal must_by_pass_simon, encrypt, cipher_ready: std_logic;
+	signal must_by_pass_simon, encrypt, cipher_ready, buff_read : std_logic;
    
 	signal cipher_left, cipher_right, plain_left, plain_right : std_logic_vector(63 downto 0);
 
@@ -122,8 +122,7 @@ begin
 				when S2 =>		if buff_populated = '1' then 
 										cont <= (others=>'0');
 										go <= '1';         -- can transfer to the other buffer
-										if size=0 and O_EA = S_iddle then     -- terminou o pacote ou continua a receber
-											go <= '0';
+										if size=0 then     -- terminou o pacote ou continua a receber
 											EA <= S_iddle;
 										else
 											EA <= S1;
@@ -173,24 +172,31 @@ begin
 		cypher_Buff <= (others=>(others=>'0'));  
 		cypher_position <= 0;
 		buff_populated <= '0';
+		go <= '0';
 		elsif rising_edge(clock) then
-			if cipher_ready='1' then
-				cypher_Buff(cypher_position) <= data_word_out;				
+			if buff_populated='1' and output_buffer_in_use='0' and buff_read='1' then
+				buf_out <= cypher_Buff;
+				buff_populated <= '0';
+				go <= '1';         -- can transfer to the other buffe
+			else	
+				go <= '0';
+			end if;
+			
+			if (cipher_ready='1') then
+				if must_by_pass_simon ='1' then
+					cypher_Buff(cypher_position) <= IN_data_in;
+				else
+					cypher_Buff(cypher_position) <= data_word_out;	
+				end if;
 				if cypher_position < 3 then 
 					cypher_position <= cypher_position +1;
-					buff_populated <= '0';
 				else
 					cypher_position <= 0;
 					buff_populated <= '1';
 				end if;
-			else 
-				buff_populated <= '0';
-			end if;
+			end if;			
 		end if;
 	end process;
-
-	buf_out <=  buf_copy when must_by_pass_simon='1' else     -- large mux :-(
-	buf_simon;
 
 
 	-- exemplo para 16 bits
@@ -251,6 +257,7 @@ begin
 		OUT_rx <= '0';                    -- signalize output data
 		OUT_data_in <= (others=>'0');     -- output data
 		output_buffer_in_use <= '0';
+		buff_read <= '1';
 		elsif rising_edge(clock) then
 			case O_EA is
 				when S_iddle =>	OUT_rx	<= '0';
@@ -258,6 +265,7 @@ begin
 								if go='1' then 
 									O_EA <= S_H;
 									output_buffer_in_use <= '1';
+									buff_read <= '0';
 								else
 									output_buffer_in_use <= '0';
 								end if;
@@ -287,6 +295,7 @@ begin
 										contO<=0;  
 										O_EA <= S1;
 										output_buffer_in_use <= '0';
+										buff_read <= '1';
 									else  
 										contO <= contO + 1;   
 									end if;

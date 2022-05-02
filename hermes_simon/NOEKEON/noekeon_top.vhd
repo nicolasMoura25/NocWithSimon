@@ -116,6 +116,7 @@ begin
             st_cnt <= st_cnt - 1;
             if st_cnt = 0 then
               st   <= st + 1;
+			  rc_addr_passed <= (others => '0');
             end if;
           end if;
 
