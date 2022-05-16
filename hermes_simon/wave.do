@@ -66,82 +66,38 @@ add wave -noupdate -group ROUTER8 -radix hexadecimal /tb/data_out(8)
 add wave -noupdate -group ROUTER8 /tb/tx(8)
 add wave -noupdate -group ROUTER8 /tb/credit_i(8)
 
-add wave -noupdate -group CYPHER0 -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_in/IN_data_in
-add wave -noupdate -group CYPHER0 /tb/noc1/noc(0)/router/wrapper_in/IN_rx
-add wave -noupdate -group CYPHER0 /tb/noc1/noc(0)/router/wrapper_in/IN_credit_o
-add wave -noupdate -group CYPHER0 /tb/noc1/noc(0)/router/wrapper_in/OUT_data_in
-add wave -noupdate -group CYPHER0 /tb/noc1/noc(0)/router/wrapper_in/OUT_rx
-add wave -noupdate -group CYPHER0 /tb/noc1/noc(0)/router/wrapper_in/OUT_credit_o
-add wave -noupdate -group CYPHER0 /tb/noc1/noc(0)/router/wrapper_in/EA
-add wave -noupdate -group CYPHER0 /tb/noc1/noc(0)/router/wrapper_in/buf
-add wave -noupdate -group CYPHER0 /tb/noc1/noc(0)/router/wrapper_in/buf_out
-add wave -noupdate -group CYPHER0 /tb/noc1/noc(0)/router/wrapper_in/contO
-add wave -noupdate -group CYPHER0 /tb/noc1/noc(0)/router/wrapper_in/size
-add wave -noupdate -group CYPHER0 /tb/noc1/noc(0)/router/wrapper_in/h_target
-add wave -noupdate -group CYPHER0 /tb/noc1/noc(0)/router/wrapper_in/h_size
-add wave -noupdate -group CYPHER0 /tb/noc1/noc(0)/router/wrapper_in/cont_flit_out
-add wave -noupdate -group CYPHER0 /tb/noc1/noc(0)/router/wrapper_in/go
-add wave -noupdate -group CYPHER0 /tb/noc1/noc(0)/router/wrapper_in/cipher_ready
-add wave -noupdate -group CYPHER0 /tb/noc1/noc(0)/router/wrapper_in/output_buffer_in_use
-add wave -noupdate -group CYPHER0 /tb/noc1/noc(0)/router/wrapper_in/cont
-add wave -noupdate -group CYPHER0 /tb/noc1/noc(0)/router/wrapper_in/encrypt
-add wave -noupdate -group CYPHER0 /tb/noc1/noc(0)/router/wrapper_in/cipher_left
-add wave -noupdate -group CYPHER0 /tb/noc1/noc(0)/router/wrapper_in/cipher_right
-add wave -noupdate -group CYPHER0 /tb/noc1/noc(0)/router/wrapper_in/plain_left
-add wave -noupdate -group CYPHER0 /tb/noc1/noc(0)/router/wrapper_in/plain_right
-
-add wave -noupdate -group DECRYPT8 -radix hexadecimal /tb/noc1/noc(8)/router/wrapper_out/IN_data_in
-add wave -noupdate -group DECRYPT8 /tb/noc1/noc(8)/router/wrapper_out/IN_rx
-add wave -noupdate -group DECRYPT8 /tb/noc1/noc(8)/router/wrapper_out/IN_credit_o
-add wave -noupdate -group DECRYPT8 /tb/noc1/noc(8)/router/wrapper_out/OUT_data_in
-add wave -noupdate -group DECRYPT8 /tb/noc1/noc(8)/router/wrapper_out/OUT_rx
-add wave -noupdate -group DECRYPT8 /tb/noc1/noc(8)/router/wrapper_out/OUT_credit_o
-add wave -noupdate -group DECRYPT8 /tb/noc1/noc(8)/router/wrapper_out/EA
-add wave -noupdate -group DECRYPT8 /tb/noc1/noc(8)/router/wrapper_out/buf
-add wave -noupdate -group DECRYPT8 /tb/noc1/noc(8)/router/wrapper_out/buf_out
-add wave -noupdate -group DECRYPT8 /tb/noc1/noc(8)/router/wrapper_out/contO
-add wave -noupdate -group DECRYPT8 /tb/noc1/noc(8)/router/wrapper_out/size
-add wave -noupdate -group DECRYPT8 /tb/noc1/noc(8)/router/wrapper_out/h_target
-add wave -noupdate -group DECRYPT8 /tb/noc1/noc(8)/router/wrapper_out/h_size
-add wave -noupdate -group DECRYPT8 /tb/noc1/noc(8)/router/wrapper_out/cont_flit_out
-add wave -noupdate -group DECRYPT8 /tb/noc1/noc(8)/router/wrapper_out/go
-add wave -noupdate -group DECRYPT8 /tb/noc1/noc(8)/router/wrapper_out/cipher_ready
-add wave -noupdate -group DECRYPT8 /tb/noc1/noc(8)/router/wrapper_out/output_buffer_in_use
-add wave -noupdate -group DECRYPT8 /tb/noc1/noc(8)/router/wrapper_out/cont
-add wave -noupdate -group DECRYPT8 /tb/noc1/noc(8)/router/wrapper_out/encrypt
-add wave -noupdate -group DECRYPT8 /tb/noc1/noc(8)/router/wrapper_out/cipher_left
-add wave -noupdate -group DECRYPT8 /tb/noc1/noc(8)/router/wrapper_out/cipher_right
-add wave -noupdate -group DECRYPT8 /tb/noc1/noc(8)/router/wrapper_out/plain_left
-add wave -noupdate -group DECRYPT8 /tb/noc1/noc(8)/router/wrapper_out/plain_right
-
 add wave -noupdate -group KEY /tb/noc1/noc(0)/router/wrapper_in/key_cont
 add wave -noupdate -group KEY /tb/noc1/noc(0)/router/wrapper_in/key_sent
 add wave -noupdate -group KEY /tb/noc1/noc(0)/router/wrapper_in/encription/key_length
 add wave -noupdate -group KEY /tb/noc1/noc(0)/router/wrapper_in/encription/key_valid
-add wave -noupdate -group KEY -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_in/encription/key_word_in
+add wave -noupdate -group KEY -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_in/encription/key_word_i
 
-add wave -noupdate -group SIMON -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_in/data_word_in
-add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/data_valid
-add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/EA
-add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/O_EA
-add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/data_ready
-add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/go
-add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/buff_populated
-add wave -noupdate -group SIMON -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_in/cypher_Buff
-add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/encryption
-add wave -noupdate -group SIMON -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_in/encription/data_word_out
-add wave -noupdate -group SIMON -color Cyan -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_in/OUT_data_in
-add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/st
-add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/st_cnt
-add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/st_rounds
-add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/micro_state
-add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/end_encrypt
-add wave -noupdate -group SIMON /tb/noc1/noc(0)/router/wrapper_in/encription/max_keys
-add wave -noupdate -group SIMON -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_in/encription/st_cnt
-add wave -noupdate -group SIMON -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_in/encription/key_word
-add wave -noupdate -group SIMON -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_in/encription/key_word_buffer
-add wave -noupdate -group SIMON -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_in/encription/data_word
-add wave -noupdate -group SIMON -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_in/encription/temporary_block
+add wave -noupdate -group CYPHER8 -radix hexadecimal /tb/noc1/noc(8)/router/wrapper_in/data_word_in
+add wave -noupdate -group CYPHER8 /tb/noc1/noc(8)/router/wrapper_in/EA
+add wave -noupdate -group CYPHER8 /tb/noc1/noc(8)/router/wrapper_in/O_EA
+add wave -noupdate -group CYPHER8 /tb/noc1/noc(8)/router/wrapper_in/encription/data_ready
+add wave -noupdate -group CYPHER8 /tb/noc1/noc(8)/router/wrapper_in/go
+add wave -noupdate -group CYPHER8 /tb/noc1/noc(8)/router/wrapper_in/buff_populated
+add wave -noupdate -group CYPHER8 -radix hexadecimal /tb/noc1/noc(8)/router/wrapper_in/cypher_Buff
+add wave -noupdate -group CYPHER8 -radix hexadecimal /tb/noc1/noc(8)/router/wrapper_in/buf_out
+add wave -noupdate -group CYPHER8 /tb/noc1/noc(8)/router/wrapper_in/encription/encryption
+add wave -noupdate -group CYPHER8 -radix hexadecimal /tb/noc1/noc(8)/router/wrapper_in/encription/data_word_out
+add wave -noupdate -group CYPHER8 -color Cyan -radix hexadecimal /tb/noc1/noc(8)/router/wrapper_in/OUT_data_in
+add wave -noupdate -group CYPHER8 /tb/noc1/noc(8)/router/wrapper_in/OUT_rx
+add wave -noupdate -group CYPHER8 /tb/noc1/noc(8)/router/wrapper_in/IN_credit_o
+add wave -noupdate -group CYPHER8 /tb/noc1/noc(8)/router/wrapper_in/OUT_credit_o
+
+add wave -noupdate -group DECRYPT0 -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_out/data_word_in
+add wave -noupdate -group DECRYPT0 /tb/noc1/noc(0)/router/wrapper_out/EA
+add wave -noupdate -group DECRYPT0 /tb/noc1/noc(0)/router/wrapper_out/O_EA
+add wave -noupdate -group DECRYPT0 -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_out/cypher_Buff
+add wave -noupdate -group DECRYPT0 -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_out/buf_out
+add wave -noupdate -group DECRYPT0 /tb/noc1/noc(0)/router/wrapper_out/IN_rx
+add wave -noupdate -group DECRYPT0 -radix decimal /tb/noc1/noc(0)/router/wrapper_out/cont
+add wave -noupdate -group DECRYPT0 -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_out/IN_data_in
+add wave -noupdate -group DECRYPT0 /tb/noc1/noc(0)/router/wrapper_out/IN_credit_o
+
+
  
 
 TreeUpdate [SetDefaultTree]

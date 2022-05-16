@@ -120,7 +120,7 @@ begin
 								end if; 
 
 				when S2 =>		if buff_populated = '1' then 
-										cont <= (others=>'0');
+											cont <= (others=>'0');
 										go <= '1';         -- can transfer to the other buffer
 										if size=0 then     -- terminou o pacote ou continua a receber
 											EA <= S_iddle;
@@ -172,14 +172,14 @@ begin
 		cypher_Buff <= (others=>(others=>'0'));  
 		cypher_position <= 0;
 		buff_populated <= '0';
-		go <= '0';
+		--go <= '0';
 		elsif rising_edge(clock) then
 			if buff_populated='1' and output_buffer_in_use='0' and buff_read='1' then
 				buf_out <= cypher_Buff;
 				buff_populated <= '0';
-				go <= '1';         -- can transfer to the other buffe
-			else	
-				go <= '0';
+			--	go <= '1';         -- can transfer to the other buffe
+			--else	
+			--	go <= '0';
 			end if;
 			
 			if (cipher_ready='1') then
@@ -288,7 +288,7 @@ begin
 								end if;
 							
 				when S0 	=>	if OUT_credit_o='1' then       -------------------- a dada iteração em S0 envia 128
-									OUT_data_in <= cypher_Buff(contO);
+									OUT_data_in <= buf_out(contO);
 									OUT_rx <= '1' ;
 									cont_flit_out <= cont_flit_out - 1;
 									if contO=BUF_SIZE-1 then   
