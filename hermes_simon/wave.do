@@ -93,6 +93,7 @@ add wave -noupdate -group DECRYPT0 /tb/noc1/noc(0)/router/wrapper_out/O_EA
 add wave -noupdate -group DECRYPT0 -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_out/cypher_Buff
 add wave -noupdate -group DECRYPT0 -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_out/buf_out
 add wave -noupdate -group DECRYPT0 /tb/noc1/noc(0)/router/wrapper_out/IN_rx
+add wave -noupdate -group DECRYPT0 /tb/noc1/noc(0)/router/wrapper_out/encription/data_ready
 add wave -noupdate -group DECRYPT0 -radix decimal /tb/noc1/noc(0)/router/wrapper_out/cont
 add wave -noupdate -group DECRYPT0 -radix hexadecimal /tb/noc1/noc(0)/router/wrapper_out/IN_data_in
 add wave -noupdate -group DECRYPT0 /tb/noc1/noc(0)/router/wrapper_out/IN_credit_o

@@ -35,7 +35,7 @@ architecture a1 of simon_wrapper is
     signal buf, buf_out, buf_copy, buf_simon: bf := (others=>(others=>'0'));
     signal cont: std_logic_vector(BUF_BITS downto 0);
 
-    type st is (S_iddle, S0, S1, S2, Initializer);
+    type st is (S_iddle, S0, S1, S2, S3, Initializer);
     signal EA: st;
 
     type st_out is (S_iddle, S0, S1, S_H, S_S);
@@ -105,11 +105,13 @@ begin
 
 				when S1 =>	if must_by_pass_simon='0'then
 									if (cont < 4) then 
-										data_valid <= '1';
-										data_word_in <= IN_data_in;                            
-										cont <= cont + 1;
-										go <= '0';
-										size <= size - 1;
+										if IN_rx='1' then
+											data_valid <= '1';
+											data_word_in <= IN_data_in;                            
+											cont <= cont + 1;
+											go <= '0';
+											size <= size - 1;
+										end if;
 									else
 										encrypt <= not decrypt;   -- habilita a encriptação
 										EA <= S2;
@@ -120,16 +122,20 @@ begin
 								end if; 
 
 				when S2 =>		if buff_populated = '1' then 
-											cont <= (others=>'0');
-										go <= '1';         -- can transfer to the other buffer
-										if size=0 then     -- terminou o pacote ou continua a receber
-											EA <= S_iddle;
-										else
-											EA <= S1;
-										end if;
+									go <= '1';         -- can transfer to the other buffer
+									EA <= S3;
 								end if;
 								
-
+				when S3 =>
+					go <= '0';
+					if IN_rx='1' then
+						cont <= (others=>'0');
+						if size=0 then     -- terminou o pacote ou continua a receber
+							EA <= S_iddle;
+						else
+							EA <= S1;
+						end if;
+					end if;
 				end case;
 		end if;
 	end process;
