@@ -57,10 +57,11 @@ architecture a1 of tb is
     constant tp : tpacket := (--start size    src tgt  encrypt     --------- size is a function of FB
                               ( 10,     2*FB,    0,  8, '1'), 
                               ( 10,       FB,    2,  6, '1'),  
-                              ( 310,    4*FB,    0,  7, '1'),  
+                              ( 510,    4*FB,    0,  7, '1'),  
                               ( 12,    6*FB,    8,  0, '1'),  
+							  ( 3000,    4*FB,    8,  1, '1'), 
                               ----- ( 40,    3*FB,    2,  3, '1),   -- BUG - ESTE PACOTE NÃO PASSA DEVIDO A FORMA COMO FOI FEITA A GERAÇÃO DOS PACOTES
-                              ( 400,   20*FB,    2,  3, '1')
+                              ( 1000,   20*FB,    2,  3, '1')
                              );  
 
     -- packet transmission - one FSM per packet
