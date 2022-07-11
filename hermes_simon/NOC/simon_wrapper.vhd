@@ -34,7 +34,7 @@ architecture a1 of simon_wrapper is
     type bf is array(0 to BUF_SIZE-1) of regflit;   
     signal cont: std_logic_vector(BUF_BITS downto 0);
 
-    type st is (S_iddle, S0, S1, S2, S3, Initializer);
+    type st is (S_iddle, S0, S1, S2, S3, Initializer, by_pass);
     signal EA: st;
 
     type st_out is (S_iddle, S0, S1, S_H, S_S);
@@ -42,9 +42,9 @@ architecture a1 of simon_wrapper is
      
     signal contO: integer ;
 
-    signal size, h_target, h_size, cont_flit_out: regflit ;
+    signal size, h_target, h_size, cont_flit_out, out_buff, by_pass_buff: regflit ;
 	signal go, output_buffer_in_use: std_logic;
-	signal must_by_pass_simon, encrypt, cipher_ready : std_logic;   
+	signal must_by_pass_simon, encrypt, cipher_ready, OUT_rx_crypted, OUT_rx_by_passed : std_logic;   
 
 	constant key: std_logic_vector(127 downto 0) := x"BDCBCFEDACCACCABEAEDFFCDCECDBEFD";
 
@@ -63,6 +63,12 @@ begin
 
 	-- há crédito se o buffer de entrada não encheu (most significat bit)   ** IMPORTANT **
 	IN_credit_o <= '1' when cont(BUF_BITS)='0' else '0';
+	
+	OUT_data_in <= by_pass_buff when EA=by_pass else out_buff;
+	
+	OUT_rx <= '1' when EA=by_pass else OUT_rx_crypted;
+	
+	
 
     ----------------------------------------------------------------------------
     -- FSM and input registers
@@ -76,6 +82,7 @@ begin
 			encrypt		<= '0';
 			go			<= '0';
 			data_valid	<= '0';
+			OUT_rx_by_passed <= '0';
 
 		elsif rising_edge(clock) then
 			case EA is
@@ -113,12 +120,22 @@ begin
 										data_valid <= '0';
 									end if;
 								else
-									EA <= S2;
+									EA <= by_pass;
 								end if; 
 
 				when S2 =>		if buff_populated = '1' then 
 									go <= '1';         -- can transfer to the other buffer
 									EA <= S3;
+								end if;
+								
+				when by_pass =>	if IN_rx='1' then 
+									by_pass_buff <= IN_data_in;
+									size <= size - 1;
+								end if;
+								
+								if size=0 then     -- terminou o pacote ou continua a receber
+									EA <= S_iddle;
+								else
 								end if;
 								
 				when S3 =>
@@ -223,12 +240,12 @@ begin
 	if reset='1' then
 		O_EA <= S_iddle;
 		contO <= 0;
-		OUT_rx <= '0';                    -- signalize output data
-		OUT_data_in <= (others=>'0');     -- output data
+		OUT_rx_crypted <= '0';                    -- signalize output data
+		out_buff <= (others=>'0');     -- output data
 		output_buffer_in_use <= '0';
 		elsif rising_edge(clock) then
 			case O_EA is
-				when S_iddle =>	OUT_rx	<= '0';
+				when S_iddle =>	OUT_rx_crypted	<= '0';
 								contO	<= 0;
 								if go='1' then 
 									O_EA <= S_H;
@@ -238,25 +255,25 @@ begin
 								end if;
 
 				when S_H	=>	if OUT_credit_o='1' then    -- send address
-									OUT_data_in <= h_target;
-									OUT_rx <= '1' ;
+									out_buff <= h_target;
+									OUT_rx_crypted <= '1' ;
 									O_EA <= S_S;
 								else
-									OUT_rx <= '0' ;  
+									OUT_rx_crypted <= '0' ;  
 								end if;
 
 				when S_S 	=>  if OUT_credit_o='1' then -- send size
-									OUT_data_in <= h_size;
+									out_buff <= h_size;
 									cont_flit_out <= h_size;
-									OUT_rx <= '1' ;
+									OUT_rx_crypted <= '1' ;
 									O_EA <= S0;
 								else
-									OUT_rx <= '0' ;  
+									OUT_rx_crypted <= '0' ;  
 								end if;
 							
 				when S0 	=>	if OUT_credit_o='1' then       -------------------- a dada iteração em S0 envia 128
-									OUT_data_in <= cypher_Buff(contO);
-									OUT_rx <= '1' ;
+									out_buff <= cypher_Buff(contO);
+									OUT_rx_crypted <= '1' ;
 									cont_flit_out <= cont_flit_out - 1;
 									if contO=BUF_SIZE-1 then   
 										contO<=0;  
@@ -266,10 +283,10 @@ begin
 										contO <= contO + 1;   
 									end if;
 								else
-									OUT_rx <= '1' ;  
+									OUT_rx_crypted <= '1' ;  
 								end if;
 
-				when S1		=>	OUT_rx <= '0';
+				when S1		=>	OUT_rx_crypted <= '0';
 								contO <= 0;
 								if cont_flit_out=0 then   
 									O_EA <= S_iddle;    -- final de pacote
